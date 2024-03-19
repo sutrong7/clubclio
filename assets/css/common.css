@@ -1,0 +1,128 @@
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    margin:-1px;
+}
+
+.inner{
+  padding: 0 15px;
+}
+
+.point{
+  color: var(--color-point) !important;
+}
+
+.ico {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.arrow-next{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/arrow_next2.svg);
+  background-size: 16px;
+  vertical-align: middle;
+}
+
+.group-flex{
+  display: flex;
+  align-items: center;
+}
+
+/* scrollX */
+[class $= -list]{
+  position: relative;
+  white-space: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* 익스플로러와 엣지 브라우저용 */
+  scrollbar-width: none; /* 파이어폭스 브라우저용 */
+}
+
+[class $= -list]::-webkit-scrollbar {
+  display: none;
+}
+
+/* ellipsis */
+.ellipsis1{
+    display: -webkit-box;
+    white-space: normal;
+    word-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.ellipsis2{
+    display: -webkit-box;
+    white-space: normal;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.ellipsis3{
+    display: -webkit-box;
+    white-space: normal;
+    word-wrap: break-word;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* sprite 1 */
+.btn-top {
+  background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/icon/m_sprite_icon.png);
+}
+
+.badge{
+    background: #fff;
+    border: 1px solid var(--color-basic);
+    color: var(--color-basic);
+    text-align: center;
+    border-radius: 0px;
+    font-size: 11px;
+    margin: 1px;
+    padding: 3px 7px 1px 7px;
+    cursor: default;
+    line-height: 1.15;
+    letter-spacing: 0.1px;
+}
+
+.badge.point{
+  border: 1px solid var(--color-point);
+  font-weight: 600;
+  color: var(--color-point);
+}
+
+.btn-top{
+  display: block;
+  width: 9.6vw;
+  height: 9.6vw;
+  position: fixed;
+  right: 3.33333vw;
+  z-index: 10;
+  background-size: 133.33333vw;
+  background-position: -13.33333vw -66.66667vw;
+  bottom: 100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* 
+  INPUT
+*/
+
+.select-box {
+  background: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/select.svg) no-repeat 98% center;
+  letter-spacing: -0.5px;  
+  vertical-align: middle;
+}
+
+.hide{
+  display: none !important;
+}

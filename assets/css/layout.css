@@ -1,0 +1,911 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import "./reset.css";
+@import "./common.css";
+
+*{
+    letter-spacing: -0.17333vw;
+}
+
+/*
+    HEADER
+*/
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 80;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.header .group-util{
+    position: relative;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 5px 15px;
+    /* border-bottom: 1px solid #eee; */
+    background-color: #fff;
+    z-index: 90;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    justify-content: space-between;
+}
+
+.header .logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: auto;
+    overflow: hidden;
+    z-index: 2;    
+    height: 44px;
+    margin-right: 15px;
+    transition: all 0.3s;
+}
+
+.header .logo img{
+    width: 24px;
+    height: 26px;
+}
+
+.header .btn-back{
+    display: none;
+    margin-right: 21px;
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/back.png);
+    width: 18px;
+    height: 18px;
+    background-size: 100%;
+    transition: all 0.3s;
+}
+
+.header .search-area{
+    display: flex;
+    position: relative;
+    width: calc(100% - 76px);
+    height: 38px;  
+    align-items: center;  
+    background-color: #F5F5F5;
+    border-radius: 38px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.header .filter-color{
+    display: none;
+    padding: 0 8px;
+    margin-left: 9px;   
+    align-items: center;
+    height: 25px;
+    padding: 0px 8px;
+    background-color: var(--color-basic);
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #fff;
+}
+
+.header .filter-color.active{
+    display: flex;
+}
+
+.header .filter-color span {
+    display: none !important;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 51.5px;
+    margin-right: 5px;
+}
+
+.header .filter-color .ico-delete{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-top: -3.5px;
+    background-size: 100%;
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_close3.svg);   
+}
+
+.btn-noti{
+    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+    height: 24px;
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_noti.svg);
+    /* background-color: transparent; */
+    z-index:2;
+}
+
+.header .input-text {
+    width: 100%;
+    padding: 0 10px;
+    padding-right: 76px;
+    height: 38px;
+    background-color: #F5F5F5;
+    border-radius: 38px !important;
+    font-weight: 400;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: none;
+    line-height: 11.46667vw;
+}
+
+.btn-filter{
+    position: absolute;
+    top: 3px;
+    right: 39px;
+    width: 30px;
+    height: 30px;
+    background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/select_color.svg);
+    border-radius: 10px;
+}
+
+.btn-search{   
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_search.svg);
+    background-size: 100%;
+    vertical-align: middle;    
+}
+
+.nav {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding: 0px 2.5px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 99;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav .nav-list {
+    display: flex;
+}
+.nav .nav-item {
+    display: block;
+}
+.nav .nav-item.on {
+    border-bottom: 2px solid;
+    color: #000;
+}
+
+.nav .nav-item .link{
+    display: block;
+    padding: 12px 9.5px;
+    font-size: 16px;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    line-height: 16px;
+    min-width: 50px;
+}
+
+.nav .nav-item.on .link{
+    font-weight: 700;
+    color: var(--color-bold);
+}
+
+.nav .nav-item:first-child .link{
+    padding-left: 15px;
+}
+
+.search-layer{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 49px;
+    box-sizing: border-box;
+    z-index: 11;
+    top: 41px;
+    transition: all 0.3s ease;
+}
+
+.search-layer.active{
+    display: block;
+}
+
+.search-layer .bg-shadow{
+    display: none;
+}
+.search-layer .bg-shadow.active{
+    opacity: 0.5;
+    visibility: visible;
+    display: block;
+    z-index: 5;
+}
+
+.search-layer .search-wrap{
+    position: relative;
+    z-index: 9;
+    height: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px 15px 20px;
+}
+
+.search-layer .searchSlide {}
+.search-layer .search-item {
+    border: #e4e4e4 1px solid;
+    border-radius: 1rem;
+    width: 70vw !important;
+    padding: 15px;
+    height: 340px;
+}
+.search-layer .keyword-popular {}
+.search-layer .keyword-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 0;
+}
+.search-layer .keyword-head .keyword-title {
+    font-weight: 700;
+    line-height: 16px;
+    font-size: 16px;
+}
+.search-layer .keyword-body {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.search-layer .keyword-body ul{
+    width: 100%;
+}
+
+.search-layer .keyword-body li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 28px;
+    list-style: none;
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 14px;
+}
+
+.search-layer .keyword-body b{
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-basic);
+}
+
+.search-layer .keyword-body .keyword-text {
+    flex: 1;
+    width: 80%;
+    color: #666;
+}
+
+.search-layer .ico {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 18px;
+    background-size: 18px auto;
+}
+
+.search-layer .ico-up {   
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_up.png);
+}
+
+.search-layer .ico-down {
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_down.png);
+}
+
+.search-layer .ico-hyphen {
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_hyphen.png);
+}
+
+.search-layer .swiper-pagination{
+    position: relative;
+    margin-top: 5px;
+    top: 0;
+}
+
+.search-layer .swiper-pagination-bullet{
+    opacity: 0.2;
+}
+
+.search-layer .swiper-pagination-bullet-active{
+    background-color: var(--color-basic);
+    opacity: 1;
+}
+
+.productSlide {
+    border-top: #ececec 1px solid;
+    margin: 15px 0 0 0;
+    padding: 15px 0 0 0;
+}
+
+.productSlide .item-wrap .thumb-box{
+    width: 80px;
+    height: 80px;
+    padding-top: 80px;
+}
+
+.productSlide .item-wrap .info-wrap{
+    width: calc(100% - 95px);
+    padding-left: 15px;
+}
+
+.productSlide .item-wrap .group-price{
+    margin-bottom: 0;
+}
+
+.color-layer{
+    display: none;
+    position: fixed;
+    top: 103px;
+    left: 33px;
+    width: calc(100% - 84px);
+    padding: 20.76px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.15);
+    z-index: 12;
+    box-sizing: border-box;
+}
+
+.color-layer ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: -3.995px;
+}
+
+.color-layer li {
+    margin: 3.995px;
+}
+
+.color-layer a {
+    position: relative;
+    display: block;
+    width: 28.76px;
+    height: 28.76px;
+    border-radius: 100%;
+}
+
+.color-layer a::before {
+    content:'';
+    position:absolute;
+    top:7px;
+    left:7px;
+    width:14.5px;
+    height:14.5px;
+    background-color:#fff;
+    border-radius:100%;
+    opacity:0;
+}
+
+.color-layer li.active a::before {
+    opacity:1;
+}
+
+/*
+    GNB
+*/
+
+#gnb{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index:3;
+    background-color: #fff; 
+    border-top: 1px solid #eee;
+}
+
+#gnb ul{
+    display: flex;
+    align-items: center;
+    height: 49px;
+}
+
+#gnb li {
+    list-style: none;
+    width: 20%;
+    height: 100%;
+}
+
+#gnb li .ico {
+    position: relative;
+    display: block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gnb-menu{
+    background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/gnb_menu.svg);
+}
+
+.gnb-search{
+    background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/gnb_search.svg);
+}
+
+
+.gnb-home{
+    background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/gnb_home.svg);
+}
+
+
+.gnb-mypage{
+    background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/gnb_my.svg);
+}
+
+
+.gnb-cart{
+    position: relative;
+    background-image:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/gnb_cart.svg);
+}
+
+#gnb li.on .gnb-home{
+    background-image: url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/gnb_home_on.svg);
+}
+
+#gnb li.on a:not(.gnb_cart)::after{
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: var(--color-point);
+    border-radius: 100%;
+}
+
+.gnb-cart .noti-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 4px;
+    right: 18px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-point);
+    border-radius: 14px;
+    font-weight: 500;
+    font-size: 9px;
+    color: #fff;
+}
+
+/*
+    ASIDE
+*/
+
+.aside-gnb{
+    position: fixed;
+    width: 295px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    left: -100%;
+    transition: all 0.3s ease;
+    overflow: auto;
+}
+
+.aside-gnb.on{
+    left:0;
+}
+
+.bg-shadow{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background:rgba(0,0,0,0.7);
+    overflow: hidden;
+}
+
+.gnb-wrap{}
+
+.aside-gnb .group-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 33px 25px;
+}
+.aside-gnb .group-header h4{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.aside-gnb .group-header h4 a {
+    display: flex;
+    align-items: center;
+    color:var(--color-bold);
+}
+
+.aside-gnb .group-header .arrow-next{
+    margin-left: 15px;    
+}
+.aside-gnb .group-header .btn-close{
+    background:url(https://clubclio.co.kr/assets/mobile_templet/mobile_enterprise/images/common/ico_close.svg);
+    width: 24px;
+    height: 24px;
+}
+
+.aside-gnb .group-brand{}
+.aside-gnb .brand-list{
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    overflow: auto;
+    padding-left: 30px;
+}
+.aside-gnb .brand-item{
+    width: auto;
+    flex-shrink: 0;
+    margin-right: 15px;
+    list-style: none;
+}
+.aside-gnb .brand-item img{
+    display: block;
+    margin: 0 auto;
+    height: 94px;
+    margin-bottom: 12px;
+}
+.aside-gnb .group-menu{
+    padding: 0px 30px;
+}
+.aside-gnb .menu-list{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.aside-gnb .menu-list:last-child{
+    border-bottom: none;
+}
+.aside-gnb .menu-list a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 18px;
+    color: var(--color-bold)
+}
+.aside-gnb .menu-list.col-2{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;;
+}
+.aside-gnb .menu-list.col-2 a{
+    width: 50%;
+}
+
+/*
+  PRODUCT LAYOUT
+*/
+
+.item-wrap{
+    display: flex;
+    align-items: center;
+}
+
+.item-wrap .thumb-box{
+    display: block;
+    position: relative;
+    width: 88px;
+    padding-top: 88px;
+}
+
+.item-wrap .thumb-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    object-fit: cover;
+    height: 100%;
+}
+
+.item-wrap .info-wrap{
+    width: calc(100% - 88px);
+    padding: 0px;
+    padding-left: 20px;
+}
+
+.item-wrap .brand-name{
+    color: var(--color-text);   
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    margin-bottom: 7px;
+    height: 14px;
+}
+
+.item-wrap .product-name{
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 5px;
+}
+
+.item-wrap .group-price{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    font-size: 16px;
+    line-height: 16px;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.item-wrap .price-now{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: var(--color-bold);  
+}
+
+.item-wrap .price-origin{
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    color: var(--color-text);
+    font-weight: 400;
+    margin: 0 10px 0 5px;   
+}
+
+.item-wrap .group-price .percent{
+    font-weight: 700;
+}
+
+.group-review {
+    display: flex;
+    align-items: center;
+    height: 12px;
+    font-size: 13px !important;
+}
+
+.group-review .ico-star{
+    width: 1.05em;
+    height: 1.05em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    vertical-align: middle;
+    display: inline-flex !important;
+    margin-right: 3px;
+    background-image: url('../images/ico-star.svg');
+    background-size: 100% 100%;
+    filter:rgb(245,166,35);
+}
+
+/*
+    FOOTER
+*/
+
+.footer{
+    display: block;
+    position: relative;
+    height: auto;
+    bottom: 0;
+    margin: 0px;
+    padding: 12px 15px 63px;
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    color: var(--color-text);
+}
+
+.footer .group-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.footer .sns-list{
+    display: flex;
+    align-items: center;
+}
+.footer .sns-item{
+    margin-right: 16px;
+}
+.footer .family-brand{
+    background-color: transparent;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--color-text);
+    max-width: 80px;
+    width: 100%;
+}
+
+.footer .family-brand::after{
+    content:'';
+    display: block;
+    
+}
+
+.footer .menu-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 19px;
+    margin-bottom: 0.9px;
+}
+
+.footer .menu-list a{
+    display: flex;
+    align-items: center;
+    line-height: 11px;
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--color-text);
+    letter-spacing: -0.05em;
+}
+
+.footer .menu-list a span{
+    color: #666;
+}
+
+.footer .menu-list a::after{
+    content:'';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 8px;
+    background-color: #dadada;
+}
+
+.footer .menu-list a:last-child::after{
+    display: none;
+}
+
+.footer .address{
+    font-size: 11px;
+    line-height: 22px;
+    color: var(--color-text);
+    letter-spacing: -0.015em;
+}
+
+.footer .address .name{
+    font-size: 1.0em;
+}
+
+.footer .customer{
+    margin-top: 0.6px;
+    font-size: 12px;
+    line-height: 22px;
+    color: var(--color-text);
+    letter-spacing: -0.015em;
+}
+
+.footer .customer a{
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.footer .contact{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.footer .contact a{
+
+}
+
+.footer .contact .email-info{
+    font-size: 12px;
+    line-height: 22px;
+    position: relative;
+}
+
+.footer .contact .email-info .btn-info{
+    display: inline-block;
+    line-height: 1;
+    padding: 4px 5px 3px 5px;
+    border: 1px solid #ddd;
+    margin: -3px 0 0 3px;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.footer .contact .email-box{
+    display: none;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    bottom: 20px;
+    z-index:10;
+}
+
+.footer .contact .email-box.on{
+    display: block;
+}
+
+.footer .contact .email-box::before{
+    position: absolute;
+    content: "";
+    border: 8px solid;
+    border-color: #aaa transparent transparent transparent; 
+    bottom: -6px;
+    right: 48%;
+}
+
+.footer .contact .email-box::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -6px;
+    right: 48%;
+    border: 8px solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.footer .contact .email-box ul{
+    font-size: 12px;
+    background: #fff;
+    padding: 10px 15px;
+    margin: 0;
+    list-style: none;
+    display: block;
+    white-space: nowrap;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.footer .contact .email-box li{
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.footer .copy{
+    display: block;
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+    line-height: 11px;
+}
+
+.footer .copy strong{
+    font-weight: 700;
+}

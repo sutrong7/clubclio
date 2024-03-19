@@ -1,0 +1,46 @@
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;flex-shrink:0;}
+:root {
+  -webkit-tap-highlight-color:transparent;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  cursor:default;
+  line-height:1.5;
+  overflow-wrap:break-word;
+  -moz-tab-size:4;
+  tab-size:4;
+  --font-en: 'Roboto', sans-serif;
+  --font-kr: 'Noto Sans KR', sans-serif;
+  --color-basic: #222;
+  --color-point: #FF5C00;
+  --color-text: #999;
+  --color-bold : #000;
+}
+
+html, body {height:100%;}
+img, picture, video, canvas, svg {display: block;max-width:100%;width:100%}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+fieldset{border:0;}
+ul{list-style:none;}
+
+input,button,select{
+    border:0;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* 세팅 */
+body {
+    color: #222;
+    font-family: "Roboto","Noto Sans KR","AppleSDGothcNeo","AppleGothic", sans-serif;
+    font-size: 14px;
+    color: #222;
+    line-height: 1.35em;
+    position: relative;
+}
+
+.body-locked{
+  overflow: hidden;
+}
